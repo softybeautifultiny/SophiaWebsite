@@ -1,0 +1,169 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Cambria", sans-serif;
+    color: var(--normalFontColor);
+}
+
+:root {
+    --seperatorHeight: 9.4rem;
+    --seperatorFontSize: 3.2rem;
+    --charcoal: #323437;
+    --darkCharcoal: #1F1F1F;
+    --normalFontColor: #F0F0F0;
+    --navHeight: 6.25rem;
+    --deepRed: #5B1C25;
+    --beigeDoor: #BAB4A0;
+    --peach: #FFD8CF;
+    --bodyHeight: 40rem;
+    --pinRed: #D63633;
+}
+
+
+/* ===========================================================================================================*/
+
+.madeline__body {
+    height: var(--bodyHeight);
+    display: flex;
+   
+    justify-content: center;
+    /*height: 5%;*/
+}
+
+.madeline__body__1 {
+    /*height: 50rem;*/
+   /* border: 2px solid black;*/
+    justify-content: center;
+    display: flex;
+    background: var(--peach);
+    height: 10%;
+
+}
+
+#m+s-image {
+    width: auto;
+    height: auto;
+    display: flex;
+}
+
+
+
+/* ===========================================================================================================*/
+
+.pinterest__container {
+
+}
+
+.pinterest__header {
+    font-size: 2rem;
+}
+
+.pinterest__body {
+    display: flex;
+    background: var(--pinRed);
+    width: 100%;
+/*    border: 3px solid blue;
+*/    justify-content: center;
+    align-items: center;
+    height: var(--bodyHeight);
+}
+
+#pinterest__link {
+    justify-content: center;
+    display: flex;
+    background: var(--pinRed);
+   width: 20%;
+    transition: 0.3s ease;
+
+}
+
+#pinterest__link:hover {
+    width: 25%;
+    transition: 0.3s ease;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+#pinterest__icon {
+    width: 100%;
+    height: auto;
+}
+
+
+/* ===========================================================================================================*/
+/* ----------------------- Navbar ----------------------- */
+.main__header {
+    height: 5rem;
+    display: flex;
+    justify-content: left;
+    background: var(--darkCharcoal);
+    color: var(--normalFontColor);
+    justify-content: center;
+    align-items: center;
+    font-family: cursive;
+    font-size: 2rem;
+    font: "Brush Script MT";
+    font-style: italic;
+}
+
+.main__descriptor__text {
+    /*border: 2px solid black;*/
+    width: 70%;
+    stroke: black;
+    stroke-width: 3px;
+    color: var(--normalFontColor);
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    background: var(--darkCharcoal);
+
+    height: 20%;
+/*    height: 40%;*/
+}
+
+.main__descriptor {
+    width: 100%;
+
+    justify-content: center;
+    /*border: 2px solid black;*/
+    display: flex;
+    align-items: center;
+}
+
+.cutey__image {
+    height: 100%;
+    display: flex;
+    border: 8px solid var(--charcoal);
+}
+
+.fuckoMode {
+    border: 8px solid var(--darkCharcoal);
+    font-size: 2rem;
+    width: 100%;
+    height: 60rem;
+    display: flex;
+    /* border: 3px dashed black;*/
+    /*background: url(Images/nebula.jpg);*/
+    background: linear-gradient(90deg, var(--darkCharcoal) 0%, var(--deepRed) 80%, var(--deepRed) 90%);
+    background-size: 100%;
+}
+
+.footer {
+    background: var(--darkCharcoal);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--seperatorHeight)
+}
+
+/* ================================================================= */
+
+.tattoos {
+    height: var(--seperatorHeight);
+    background: var(--darkCharcoal);
+    font-size: var(--seperatorFontSize);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
