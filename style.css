@@ -18,6 +18,7 @@
     --peach: #FFD8CF;
     --bodyHeight: 40rem;
     --pinRed: #D63633;
+    --blueberry: #395687;
 }
 
 
@@ -159,11 +160,65 @@
 
 /* ================================================================= */
 
-.tattoos {
+
+.tetris__header {
     height: var(--seperatorHeight);
     background: var(--darkCharcoal);
     font-size: var(--seperatorFontSize);
     align-items: center;
     justify-content: center;
     display: flex;
+}
+
+.tetris__password__input {
+    background: var(--blueberry);
+    color: var(--charcoal);
+    /*height: var(--bodyHeight);*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 2rem;
+    font-size: 40px;
+}
+.tetris__button {
+    background: var(--blueberry);
+    justify-content: center;
+    display: flex;
+    padding: 2rem 2rem;
+}
+
+#button {
+    background: var(--pinRed);
+    width: 5rem;
+    height: 2rem;
+    transition: all 0.3s ease;
+}
+
+#button:hover {
+    background: var(--peach);
+    color: var(--charcoal);
+    transition: all 0.3s ease;
+}
+
+#button:active {
+    background: var(--deepRed);
+    color: var(--charcoal);
+    transition: all 0.01s;
+}
+
+/*#tetris_button:hover {
+    background: var(--peach);
+    width: 5rem;
+    height: 2rem;
+    transition: all 0.3s ease;
+}*/
+
+#textInput {
+    background: var(--darkCharcoal);
+    width: 20%;
+    height: 10%;
+    padding: 0 2rem;
+    justify-content: center;
+    display: flex;
+    font-size: 40px;
 }
