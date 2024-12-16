@@ -4,14 +4,21 @@
 //
 // ============================================================ //
 
-function askForPassword() {
-    var password
-    var pass0 = "FUCKMEHARDER";
-    password = prompt('Enter Password To View Page', ' ');
+function askForPassword(password, inpt, location) {
+    const input = document.getElementById(inpt);
+    const value = input.value;
+    console.log(value);
 
-    if (password !== pass0) {
-        alert("Incorrect Password Fucker!!! Try again!!!");
-    } else {
-        window.location="tetrisremake.html";
+    if (value === '') {
+        alert("You didn't type anything dickfart.");
+        return;
     }
+
+    if (password === value) {
+        window.location = location;
+    } else {
+        alert(value + " is the wrong password dickfart, try again!!!");
+    }
+
+    input.value = '';
 }

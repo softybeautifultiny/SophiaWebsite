@@ -19,6 +19,9 @@
     --bodyHeight: 40rem;
     --pinRed: #D63633;
     --blueberry: #395687;
+    --buttonNormal: #d63633ff;
+    --buttonClicked: #9e1d1bff;
+    --buttonHover: #db7371ff;
 }
 
 
@@ -184,27 +187,36 @@
     background: var(--blueberry);
     justify-content: center;
     display: flex;
-    padding: 2rem 2rem;
+    height: 4rem;
+    /*padding: 1rem 1rem;*/
 }
 
 #button {
-    background: var(--pinRed);
-    width: 5rem;
-    height: 2rem;
+    background: var(--buttonNormal);
+    width: 8rem;
+    height: 3rem;
     transition: all 0.3s ease;
+    font-size: 1.4rem;
 }
 
-#button:hover {
-    background: var(--peach);
-    color: var(--charcoal);
-    transition: all 0.3s ease;
-}
+    #button:hover {
+        background: var(--buttonHover);
+        /*color: var(--charcoal);*/
+        transition: all 0.3s ease;
+        box-shadow: 0 0 20px rgba(0,0,0,0.7); 
+        width: 8.3rem;
+        height: 3.3rem;
+        font-size: 1.5rem;
+    }
 
-#button:active {
-    background: var(--deepRed);
-    color: var(--charcoal);
-    transition: all 0.01s;
-}
+    #button:active {
+        font-size: 1.4rem;
+        background: var(--buttonClicked);
+        color: var(--charcoal);
+        width: 8rem;
+        height: 3rem;
+        transition: all 0.01s;
+    }
 
 /*#tetris_button:hover {
     background: var(--peach);
@@ -213,7 +225,7 @@
     transition: all 0.3s ease;
 }*/
 
-#textInput {
+#tetrisInput {
     background: var(--darkCharcoal);
     width: 20%;
     height: 10%;
