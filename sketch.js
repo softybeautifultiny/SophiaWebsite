@@ -45,11 +45,7 @@ class Grid {
             }
         }
 
-        console.log(this.filled);
-
-        // edges
-        this.edges = [new Obj(), new Obj()];
-        
+        //console.log(this.filled);
 
         // board collider
         this.collider = new Obj();
@@ -58,16 +54,60 @@ class Grid {
         this.collider.pos = this.pos;
         this.collider.pos.x += this.w;
         this.collider.color = colors.GREEN;
-        this.collider.visible = true;
+        this.collider.visible = false;
+        console.log("FUCK");
+
+        // edges
+        this.edges = [];
+        this.edges.push(new Obj());
+        this.edges.push(new Obj());
+        this.edges.push(new Obj());
+
+        this.edges[0].pos.x = this.pos.x;
+        this.edges[0].pos.x -= this.w;
+        this.edges[0].w = this.w / 2;
+        this.edges[0].h = this.size.y * this.w;
+        this.edges[0].visible = true;
+        this.edges[0].color = colors.GREEN;
+        
+        this.edges[1].pos.x = this.pos.x + this.w * this.size.x;
+        this.edges[1].pos.x -= this.w * 2;
+        this.edges[1].pos.x += this.w / 2;
+        this.edges[1].w = this.w / 2;
+        this.edges[1].h = this.size.y * this.w;
+
+        this.edges[2].pos.x = this.pos.x - this.w;
+        this.edges[2].w = this.size.x * this.w;
+        this.edges[2].pos.y = this.size.y * this.w - this.w / 2;
+        this.edges[2].h = this.w / 2;
     }
 
     resize() {
         this.w = document.documentElement.clientHeight / 25;
-        this.collider.pos.x += this.w;
         this.pos = createVector(width / 2 - (this.size.x * this.w) / 2, 0);
-        this.collider.w = this.size.x * this.w;
-        this.collider.pos = this.pos;
+        this.collider.w = this.size.x * this.w - this.w*2;
+        this.collider.pos.x = this.pos.x + this.w;
+        this.collider.pos.y = this.pos.y;
         this.collider.h = this.size.y * this.w;
+
+        // edges
+        this.edges[0].pos.x = this.pos.x;
+        //this.edges[0].pos.x -= this.w;
+        this.edges[0].w = this.w / 2;
+        this.edges[0].h = this.size.y * this.w;
+        this.edges[0].visible = true;
+
+        this.edges[1].pos.x = this.pos.x + this.w * this.size.x;
+        //this.edges[1].pos.x -= this.w * 2;
+        this.edges[1].pos.x -= this.w / 2;
+
+        this.edges[1].w = this.w / 2;
+        this.edges[1].h = this.size.y * this.w;
+
+        this.edges[2].pos.x = this.pos.x - this.w;
+        this.edges[2].w = this.size.x * this.w;
+        this.edges[2].pos.y = this.size.y * this.w - this.w / 2;
+        this.edges[2].h = this.w / 2;
 
         for (let i = 0; i < this.size.x; i++) {
             for (let j = 0; j < this.size.y; j++) {
@@ -109,6 +149,7 @@ class BlockManager {
 var blockAmount = 0;
 class Block {
     constructor(type) {
+        this.state = "normal";
         this.blocks = [];
         this.blocksPos = [];
         this.pos = createVector(3, 0);
@@ -159,15 +200,6 @@ class Block {
     }
 
     rotateRight() {
-        var obp = [];
-
-        for (let i = 0; i < this.blocksPos.length; i++) {
-            obp[i] = [];
-            for (let j = 0; j < this.blocksPos[0].length; j++) {
-                obp[i][j] = this.blocksPos[i][j];
-            }
-        }
-
         for (let i = 0; i < 3; i++) {
             var np = [];
 
@@ -177,10 +209,30 @@ class Block {
 
             this.blocksPos = np;
         }
+    }
 
-        this.display();
-        if (!this.safe()) {
-            this.blocksPos = obp;
+    bound() {
+        var edge = false;
+        var bottom = false;
+        for (let i = 0; i < this.blocks.length; i++) {
+            var b = this.blocks[i];
+            if (colliding(b, grid.edges[0]) || colliding(b, grid.edges[1])) {
+                edge = true;
+            }
+
+            if (colliding(b, grid.edges[2])) {
+                bottom = true;
+            }
+        }
+
+        if (edge && this.pos.x < grid.size.x / 2) {
+            this.pos.x++;
+        } else if (edge) {
+            this.pos.x--;
+        }
+
+        if (bottom) {
+            this.pos.y--;
         }
     }
 
@@ -203,7 +255,7 @@ class Block {
             for (let j = 0; j < this.blocksPos[0].length; j++) {
                 if (this.blocksPos[i][j] == 1) {
                     this.blocks[ind].pos.x = grid.cells[j + this.pos.x][i].pos.x;
-                    this.blocks[ind].pos.y = grid.cells[j + this.pos.y][i].pos.y;
+                    this.blocks[ind].pos.y = grid.cells[j][i + this.pos.y].pos.y;
                     ind++;
                 }
             }
@@ -272,7 +324,7 @@ function setup() {
 
     colors = new Color();
     test = new Obj();
-    grid = new Grid(12, 20);
+    grid = new Grid(12, 21);
     blockM = new BlockManager();
 
     blockM.createBlock('l');
@@ -296,7 +348,7 @@ function keyPressed() {
 } 
 
 // =========================================================================================== //
-let mTime = 1;
+let mTime = 0.5;
 let mTimer = mTime;
 function draw() {
     background(colors.GRAY);
@@ -307,9 +359,19 @@ function draw() {
         mTimer -= deltaTime / 1000;
 
         if (mTimer <= 0) {
-
+            let b = blockM.blocks[blockM.blocks.length - 1];
+            b.pos.y += 1;
+            mTimer = mTime;
         }
     }
+
+    for (let i = 0; i < blockM.blocks.length; i++) {
+        var b = blockM.blocks[i];
+        b.bound();
+        b.display();
+    }
+
+    // ========================================= //
 
     // ========================================= //
 
@@ -318,14 +380,6 @@ function draw() {
     }
 
     // ========================================= //
-
-    for (let i = 0; i < blockM.blocks.length; i++) {
-        var b = blockM.blocks[i];
-        b.display();
-    }
-
-    // ========================================= //
-
 
     grid.update();
 }
