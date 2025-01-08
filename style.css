@@ -70,7 +70,7 @@
 /*    border: 3px solid blue;
 */    justify-content: center;
     align-items: center;
-    height: var(--bodyHeight);
+    height: 80vh;
 }
 
 #pinterest__link {
@@ -147,6 +147,7 @@
     font-size: 2rem;
     width: 100%;
     height: 60rem;
+    height: 100vh;
     display: flex;
     /* border: 3px dashed black;*/
     /*background: url(Images/nebula.jpg);*/
@@ -252,23 +253,19 @@
     height: 80%;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 #ocd__img {
-
-    width: 50%;
     height: 50%;
-
 }
 
 #depression__img {
 
-    width: 50%;
     height: 50%;
 
 }
 
 #adhd__img {
-    width: 50%;
     height: 50%;
 }
