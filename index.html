@@ -4,101 +4,126 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet" />
-    <script src="pageManager.js"> </script>
+    <script src="pageManager.js"></script>
+    <script src="website.js"></script>
 
     <!--p5js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/addons/p5.sound.min.js"></script>
-    
+
     <title>Sophias Webbysite</title>
 </head>
+<body id="wholeWebSite">
+    <header class="main__header" id="home__section">
+        <h1>Sophia</h1>
+    </header>
 
-    <body>
-        <header class="main__header">
-            <h1>Sophia</h1>
-        </header>
+    <main>
+        <!--Introduction-->
+        <section class="fuckoMode">
 
-        <main>
-            <!--Introduction-->
-            <section class="fuckoMode">
+            <img src="Images/cutey.png" alt="pic" class="cutey__image" />
 
-                <img src="Images/cutey.png" alt="pic" class="cutey__image" />
-
-                <div class="main__descriptor">
-                    <div class="main__descriptor__text">
-                        <p>Ooga booga shoes make the booze snooze</p>
-                    </div>
+            <div class="main__descriptor">
+                <div class="main__descriptor__text">
+                    <p>Ooga booga shoes make the booze snooze</p>
                 </div>
+            </div>
+        </section>
+
+        <!--Madeline-->
+        <!--<section class="madeline__container">
+            <section class="main__header">
+                <h1> Cyber Cuties </h1>
             </section>
 
-            <!--Madeline-->
-            <!--<section class="madeline__container">
-                <section class="main__header">
-                    <h1> Cyber Cuties </h1>
-                </section>
-
-                <section class="madeline__body">
-                    <img src="Images/m+s.png" alt="pic" id="m+s-image" />
-                </section>
-
-                <section class="madeline__body__1">
-                    <img src="Images/kissy.png" alt="pic" id="kissy-image" />
-                </section>
-            </section>-->
-
-            <!--Pinterest-->
-            <section class="pinterest__container">
-                <section class="main__header">
-                    <p id="pinterest__header">My Pinterest</p>
-                </section>
-                <section class="pinterest__body">
-
-                    <a target="_blank" href="https://www.pinterest.com/softybeautifultiny/" id="pinterest__link">
-                        <img src="Images/pinterest_icon.png" id="pinterest__icon" />
-                    </a>
-                </section>
+            <section class="madeline__body">
+                <img src="Images/m+s.png" alt="pic" id="m+s-image" />
             </section>
 
-            <!--redacted-->
-            <section class="tetris__container">
-                <section class="main__header">
-                    <p>TETRIS</p>
-                </section>
-                <section class="tetris__password__input">
-                    <p>ENTER PASSWORD FOR A FUCKTASTICLY BROKEN GAME OF TETRIS: |</p>
-                    <input type="text" placeholder="Type password here..." id="tetrisInput" />
-                </section>
-                <section class="tetris__button">
-                    <button onclick="askForPassword('coatussy', 'tetrisInput', 'tetrisremake.html')" id="button">ENTER</button>
+            <section class="madeline__body__1">
+                <img src="Images/kissy.png" alt="pic" id="kissy-image" />
+            </section>
+        </section>-->
+        <!--Pinterest-->
+        <section class="pinterest__container" id="pinterest__section">
+            <section class="main__header">
+                <p id="pinterest__header">My Pinterest</p>
+            </section>
+            <section class="pinterest__body">
+
+                <a target="_blank" href="https://www.pinterest.com/softybeautifultiny/" id="pinterest__link">
+                    <img src="Images/pinterest_icon.png" id="pinterest__icon" />
+                </a>
+            </section>
+        </section>
+
+        <!--redacted-->
+        <section class="tetris__container" id="tetris__section">
+            <section class="main__header">
+                <p>TETRIS</p>
+            </section>
+            <section class="tetris__password__input">
+                <p>ENTER PASSWORD FOR A FUCKTASTICLY BROKEN GAME OF TETRIS: |</p>
+                <input type="text" placeholder="Type password here..." id="tetrisInput" />
+            </section>
+            <section class="tetris__button">
+                <button onclick="askForPassword('coatussy', 'tetrisInput', 'tetrisremake.html')" id="button">ENTER</button>
+            </section>
+        </section>
+
+        <section class="test__container" id="mental__section">
+            <section class="main__header">
+                <p>Mental Illness</p>
+            </section>
+            <section class="test__body">
+                <section class="test__images" id="mental__body">
+                    <a href="https://iocdf.org/about-ocd/" target="_blank" id="ocd__link" class="mental__image"> OCD </a>
+                    <a href="https://www.nimh.nih.gov/health/topics/depression" target="_blank" id="depression__link" class="mental__image"> DEPRESSION </a>
+                    <a href="https://www.nimh.nih.gov/health/topics/attention-deficit-hyperactivity-disorder-adhd" target="_blank" id="adhd__link" class="mental__image"> ADHD </a>
+                    <a href="https://www.nimh.nih.gov/health/topics/anxiety-disorders" target="_blank" id="anxiety__link" class="mental__image"> ANXIETY </a>
                 </section>
             </section>
+        </section>
 
-            <section class="test__container">
-                <section class="main__header">
-                    <p>Mental Illness</p>
-                </section>
-                <section class="test__body">
-                    <section class="test__images">
-                        <a href="https://iocdf.org/about-ocd/" target="_blank" id="depression__img" class="mental__image"> OCD </a>
-                        <a href="https://www.nimh.nih.gov/health/topics/depression" target="_blank" id="ocd__img" class="mental__image"> DEPRESSION </a>
-                        <a href="https://www.nimh.nih.gov/health/topics/attention-deficit-hyperactivity-disorder-adhd" target="_blank" id="adhd__img" class="mental__image"> ADHD </a>
-                        <a href="https://www.nimh.nih.gov/health/topics/anxiety-disorders" target="_blank" id="adhd__img" class="mental__image"> ANXIETY </a>
-                    </section>
+        <section class="trans__container">
+            <section class="main__header">
+                <p>TRANS WAKKA WAKKA FLEW HA</p>
+            </section>
+            <section class="trans__body">
+            </section>
+        </section>
+
+        <section class="horror__container">
+            <section class="main__header" id="horror__header">
+                <p>HORROR</p>
+            </section>
+            <section class="horror__body">
+            </section>
+        </section>
+
+        <!-- Navigation menu and buttons-->
+        <navbar class="nav">
+            <button class="nav__button" onmouseup="moveOver('wholeWebSite')">
+                <img src="Images/nav_image.svg" id="nav__image" />
+            </button>
+        </navbar>
+
+        <section class="nav__menu" id="nav__menu">
+
+            <section class="nm__container">
+                <section class="nm__items">
+                    <a onmouseup="moveOver('wholeWebSite', 1)" href="#home__section" class="nm__button">Home</a>
+                    <a onmouseup="moveOver('wholeWebSite', 1)" href="#pinterest__section" class="nm__button">Pinterest</a>
+                    <a onmouseup="moveOver('wholeWebSite', 1)" href="#tetris__section" class="nm__button">Tetris</a>
+                    <a onmouseup="moveOver('wholeWebSite', 1)" href="#mental__section" class="nm__button">Mental Health</a>
                 </section>
             </section>
+        </section>
+    </main>
 
-            <section class="trans__container">
-                <section class="main__header">
-                    <p>TRANS WAKKA WAKKA FLEW HA</p>
-                </section>
-                <section class="trans__body">
-
-                </section>
-            </section>
-        </main>
-
-        <footer class="main__header">
-            <p>&copy; 2024 Sophia's Website</p>
-        </footer>
-    </body>
+    <footer class="main__header">
+        <p>&copy; 2025 Sophia's Website</p>
+    </footer>
+</body>
 </html>

@@ -7,7 +7,7 @@
 }
 
 :root {
-    --seperatorHeight: 9.4rem;
+    --seperatorHeight: 5rem;
     --seperatorFontSize: 3.2rem;
     --charcoal: #323437;
     --darkCharcoal: #1F1F1F;
@@ -24,6 +24,11 @@
     --buttonHover: #db7371ff;
 }
 
+@font-face {
+    font-family: "Simbiot";
+
+    src: local("Fonts/Simbiot.ttf");
+}
 
 /* ===========================================================================================================*/
 
@@ -286,10 +291,94 @@
     box-shadow: 0 0 20px rgba(0,0,0,0.3);
 }
 
+#ocd__link {
+    left: 0;
+    top: 0;
+    transition: left 2s, top 2s;
+}
+
 /* ===========================================================================================================*/
 
 .trans__body {
     height: var(--seperatorHeight);
     background: rgb(89,201,239);
     background: linear-gradient(0deg, rgba(89,201,239,1) 0%, rgba(232,161,177,1) 25%, rgba(232,161,177,1) 37%, rgba(255,255,255,1) 50%, rgba(232,161,177,1) 63%, rgba(232,161,177,1) 75%, rgba(89,201,239,1) 100%);
+}
+
+/* ===========================================================================================================*/
+
+#horror__header {
+    font: 'Simbiot';
+}
+
+/* ===========================================================================================================*/
+
+.nav {
+    width: 100%;
+    position: fixed;
+    justify-content: right;
+    display: flex;
+    top: 0;
+}
+
+.nav__button {
+    width: 25%;
+    max-width: 6rem;
+    background: var(--darkCharcoal); 
+    height: var(--seperatorHeight);
+    border: none;  
+}
+
+.nav__button:hover {
+    background: var(--charcoal);
+}
+
+.nav__menu {
+    background: var(--charcoal); 
+    left: 75%;
+    top: 0;
+    /*width: 200%;*/
+    position: fixed;
+    z-index: -2;
+    width: 25%;
+    transition: left 1s;
+    height: 100%;
+
+}
+
+.nm__container {
+    background: blue;      
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+   
+    left: 0;
+}
+
+.nm__button {
+    display: flex;
+    background: var(--darkCharcoal);
+    width: 25vw;
+    justify-content: right;
+    padding: 0 2rem;
+    height: 3rem;
+    align-items: center;
+    transition: 0.2s ease;
+}
+
+.nm__button:hover {
+    transition: 0.4s ease;
+    background: var(--charcoal);
+}
+
+#nav__image {
+    width: 50%;
+}
+
+#wholeWebSite {
+    left: 0;
+    top: 0;
+    transition: left 1s, top 1s;
+    box-shadow: 0 0 50px rgba(0,0,0,0.6);
 }
