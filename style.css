@@ -321,7 +321,7 @@
 }
 
 .horror__body {
-    background-image: url("../Images/bloody_background.jpg");
+    background-image: url("Images/bloody_background.jpg");
     height: 100%;
     display: flex;
     flex-wrap: wrap;
