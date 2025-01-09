@@ -6,7 +6,6 @@
     color: var(--normalFontColor);
 }
 
-
 :root {
     --seperatorHeight: 5rem;
     --seperatorFontSize: 3.2rem;
@@ -27,7 +26,7 @@
 
 @font-face {
     font-family: "Simbiot";
-    src: url("../Fonts/Simbiot.ttf");
+    src: url("Fonts/Simbiot.ttf");
     font-weight: normal;
     font-style: normal;
 }

@@ -1,4 +1,5 @@
 var apple = false;
+var OCDclicks = 0;
 
 function moveOver(ele, type = 0) {
     switch (type) {
@@ -29,5 +30,9 @@ function moveOver(ele, type = 0) {
 
 function test() {
     console.log("fuck you");
-    
+    OCDclicks++;
+
+    if (OCDclicks == 30) {
+        alert("WOAH! you hovered 30 times. You may actually have OCD WOAH WOAH!");
+    }
 }
