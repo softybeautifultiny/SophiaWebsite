@@ -9,7 +9,7 @@
 
     <!--p5js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/p5.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/addons/p5.sound.min.js"></script>
+
 
     <title>Sophias Webbysite</title>
 </head>
@@ -21,7 +21,6 @@
     <main>
         <!--Introduction-->
         <section class="fuckoMode">
-
             <img src="Images/cutey.png" alt="pic" class="cutey__image" />
 
             <div class="main__descriptor">
@@ -45,6 +44,7 @@
                 <img src="Images/kissy.png" alt="pic" id="kissy-image" />
             </section>
         </section>-->
+
         <!--Pinterest-->
         <section class="pinterest__container" id="pinterest__section">
             <section class="main__header">
@@ -58,7 +58,7 @@
             </section>
         </section>
 
-        <!--redacted-->
+        <!--TETRIS-->
         <section class="tetris__container" id="tetris__section">
             <section class="main__header">
                 <p>TETRIS</p>
@@ -72,13 +72,14 @@
             </section>
         </section>
 
+        <!--Mental Health-->
         <section class="test__container" id="mental__section">
             <section class="main__header">
                 <p>Mental Illness</p>
             </section>
             <section class="test__body">
                 <section class="test__images" id="mental__body">
-                    <a href="https://iocdf.org/about-ocd/" target="_blank" id="ocd__link" class="mental__image"> OCD </a>
+                    <a href="https://iocdf.org/about-ocd/" target="_blank" id="ocd__link" onmouseover="test()" class="mental__image"> OCD </a>
                     <a href="https://www.nimh.nih.gov/health/topics/depression" target="_blank" id="depression__link" class="mental__image"> DEPRESSION </a>
                     <a href="https://www.nimh.nih.gov/health/topics/attention-deficit-hyperactivity-disorder-adhd" target="_blank" id="adhd__link" class="mental__image"> ADHD </a>
                     <a href="https://www.nimh.nih.gov/health/topics/anxiety-disorders" target="_blank" id="anxiety__link" class="mental__image"> ANXIETY </a>
@@ -86,19 +87,28 @@
             </section>
         </section>
 
+        <!--Trans-->
         <section class="trans__container">
             <section class="main__header">
-                <p>TRANS WAKKA WAKKA FLEW HA</p>
+                <p>TRANS WAKKA WAKKA FLEW</p>
             </section>
             <section class="trans__body">
             </section>
         </section>
 
-        <section class="horror__container">
-            <section class="main__header" id="horror__header">
-                <p>HORROR</p>
+        <!--Horror-->
+        <section class="horror__container" id="horror__section">
+            <section class="horror__header">
+                <p class="horrorh__text">HORROR</p>
             </section>
             <section class="horror__body">
+                <img src="Images/Horror/Child's_Play_Poster.jpg" class="horror__image"/>
+                <img src="Images/Horror/House_of_1000_Corpses_poster.jpg" class="horror__image"/>
+                <img src="Images/Horror/lairwhiteworm.jpg" class="horror__image"/>
+                <img src="Images/Horror/Scream_Poster.jpg" class="horror__image"/>
+                <img src="Images/Horror/The_Evil_Dead.jpg" class="horror__image"/>
+                <img src="Images/Horror/The_Thing_Poster.jpg" class="horror__image"/>
+                <img src="Images/Horror/X_(2022_film).jpg" class="horror__image"/>
             </section>
         </section>
 
@@ -110,13 +120,13 @@
         </navbar>
 
         <section class="nav__menu" id="nav__menu">
-
             <section class="nm__container">
                 <section class="nm__items">
                     <a onmouseup="moveOver('wholeWebSite', 1)" href="#home__section" class="nm__button">Home</a>
                     <a onmouseup="moveOver('wholeWebSite', 1)" href="#pinterest__section" class="nm__button">Pinterest</a>
                     <a onmouseup="moveOver('wholeWebSite', 1)" href="#tetris__section" class="nm__button">Tetris</a>
                     <a onmouseup="moveOver('wholeWebSite', 1)" href="#mental__section" class="nm__button">Mental Health</a>
+                    <a onmouseup="moveOver('wholeWebSite', 1)" href="#horror__section" class="nm__button">Horror</a>
                 </section>
             </section>
         </section>

@@ -26,3 +26,8 @@ function moveOver(ele, type = 0) {
             break;
     } 
 }
+
+function test() {
+    console.log("fuck you");
+    
+}
