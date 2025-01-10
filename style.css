@@ -248,6 +248,7 @@
     display: flex;
     font-size: 40px;
 }
+
 /* ===========================================================================================================*/
 
 .test__body {
@@ -302,6 +303,21 @@
     transition: left 2s, top 2s;
 }
 
+.weird__body {
+    display: flex;
+    justify-content: space-evenly;
+    height: 160%;
+    background: var(--charcoal);
+    padding: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.weird__image {
+    width: 50%;
+    border: 0.5rem solid var(--darkCharcoal);
+
+}
+
 /* ===========================================================================================================*/
 
 .trans__body {
@@ -324,7 +340,9 @@
 }
 
 .horror__body {
+    background-repeat: round;
     background-image: url("Images/bloody_background.jpg");
+
     height: 100%;
     display: flex;
     flex-wrap: wrap;
