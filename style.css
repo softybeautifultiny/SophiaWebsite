@@ -440,7 +440,7 @@
 
 .rsmemes__container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     padding: 4rem 2rem;
     border: 12px solid var(--darkCharcoal);
     flex-wrap: wrap;
@@ -449,11 +449,11 @@
 }
 
 .rsmemes__body {
-    /* justify-content: space-between;
+    display: flex;
+justify-content: space-between;
     padding: 4rem 0;
     flex-wrap: wrap;
-        */
-    width: 100%;
+
 }
 
 #rsinput {
@@ -468,13 +468,16 @@
 
 .rs__button {
     background: var(--blueberry);
-    justify-content: center;
+    /*justify-content: center;*/
     display: flex;
     height: 4rem;
 }
 
 #rs_image {
-    max-width: 30rem;
-    max-height: 90rem;
+    display: block;
+    max-width: 40%;
+    max-height: 60rem;
+    width: auto;
+    height: auto;
     border: 8px solid var(--darkCharcoal);
 }
