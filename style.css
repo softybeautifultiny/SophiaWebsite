@@ -206,6 +206,7 @@
 }
 
 #button {
+
     background: var(--buttonNormal);
     width: 8rem;
     height: 3rem;
@@ -435,4 +436,45 @@
     top: 0;
     transition: left 1s, top 1s;
     box-shadow: 0 0 50px rgba(0,0,0,0.6);
+}
+
+.rsmemes__container {
+    display: flex;
+    justify-content: space-around;
+    padding: 4rem 2rem;
+    border: 12px solid var(--darkCharcoal);
+    flex-wrap: wrap;
+    width: 100%;
+    background: var(--charcoal);
+}
+
+.rsmemes__body {
+    /* justify-content: space-between;
+    padding: 4rem 0;
+    flex-wrap: wrap;
+        */
+    width: 100%;
+}
+
+#rsinput {
+    background: var(--darkCharcoal);
+    width: 20%;
+    height: 10%;
+    padding: 0 2rem;
+    justify-content: center;
+    display: flex;
+    font-size: 40px;
+}
+
+.rs__button {
+    background: var(--blueberry);
+    justify-content: center;
+    display: flex;
+    height: 4rem;
+}
+
+#rs_image {
+    max-width: 30rem;
+    max-height: 90rem;
+    border: 8px solid var(--darkCharcoal);
 }

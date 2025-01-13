@@ -1,6 +1,10 @@
 var apple = false;
 var OCDclicks = 0;
 
+function debugreset() {
+    localStorage.removeItem("allowed");
+}
+
 function moveOver(ele, type = 0) {
     switch (type) {
         case 0:
@@ -26,6 +30,25 @@ function moveOver(ele, type = 0) {
             apple = false;
             break;
     } 
+}
+
+function promptPassword(ps) {
+    var a = localStorage.getItem("allowed");
+    if (a == null) {
+        console.log("SDKLFJ");
+        do {
+            input = prompt("Must Enter Something:");
+        } while (input == null || input == "");
+
+        console.log(ps + " " + input.value);
+
+        localStorage.setItem("allowed", true);
+
+        if (input != ps) {
+            history.back();
+            debugreset();
+        }
+    }
 }
 
 function test() {
